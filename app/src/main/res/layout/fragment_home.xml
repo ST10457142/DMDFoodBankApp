@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cream">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- HERO BANNER -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/earth_dark"
+            android:padding="24dp"
+            android:paddingTop="32dp"
+            android:paddingBottom="32dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🌿 Non-Profit · South Africa"
+                android:textSize="11sp"
+                android:textColor="@color/earth_light"
+                android:background="@drawable/bg_tag"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:id="@+id/tvWelcomeBanner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/earth_light"
+                android:textSize="13sp"
+                android:visibility="gone"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/hero_title"
+                android:textSize="28sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:fontFamily="serif"
+                android:lineSpacingMultiplier="1.1"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/hero_sub"
+                android:textSize="13sp"
+                android:textColor="@color/white_70"
+                android:lineSpacingMultiplier="1.5"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- CTA Buttons -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="24dp">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDonateHero"
+                    android:layout_width="wrap_content" android:layout_height="48dp"
+                    android:text="@string/btn_donate_now" android:layout_marginEnd="10dp"
+                    style="@style/Widget.DMD.Button"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnAboutHero"
+                    android:layout_width="wrap_content" android:layout_height="48dp"
+                    android:text="@string/btn_learn_more" android:layout_marginEnd="10dp"
+                    style="@style/Widget.DMD.Button.Outlined"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnJoin"
+                    android:layout_width="wrap_content" android:layout_height="48dp"
+                    android:text="@string/btn_join_us"
+                    style="@style/Widget.DMD.Button.Outlined"/>
+            </LinearLayout>
+
+            <!-- Impact Stats Row -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_marginEnd="6dp"
+                    app:cardBackgroundColor="#14FFFFFF" app:cardCornerRadius="10dp"
+                    app:strokeColor="#1AFFFFFF" app:strokeWidth="1dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:gravity="center" android:padding="12dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="48K+" android:textSize="20sp" android:textColor="@color/earth_light"
+                            android:textStyle="bold" android:fontFamily="serif"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Meals served" android:textSize="10sp" android:textColor="@color/white_70"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_marginHorizontal="3dp"
+                    app:cardBackgroundColor="#14FFFFFF" app:cardCornerRadius="10dp"
+                    app:strokeColor="#1AFFFFFF" app:strokeWidth="1dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:gravity="center" android:padding="12dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="320" android:textSize="20sp" android:textColor="@color/earth_light"
+                            android:textStyle="bold" android:fontFamily="serif"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Volunteers" android:textSize="10sp" android:textColor="@color/white_70"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_marginStart="6dp"
+                    app:cardBackgroundColor="#14FFFFFF" app:cardCornerRadius="10dp"
+                    app:strokeColor="#1AFFFFFF" app:strokeWidth="1dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:gravity="center" android:padding="12dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="7" android:textSize="20sp" android:textColor="@color/earth_light"
+                            android:textStyle="bold" android:fontFamily="serif"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Hubs" android:textSize="10sp" android:textColor="@color/white_70"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <!-- Progress bar -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="#14FFFFFF" app:cardCornerRadius="10dp"
+                app:strokeColor="#1AFFFFFF" app:strokeWidth="1dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="14dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Monthly target progress" android:textSize="11sp"
+                        android:textColor="@color/white_70" android:layout_marginBottom="8dp"/>
+                    <ProgressBar android:id="@+id/progressMonth"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="match_parent" android:layout_height="8dp"
+                        android:progressDrawable="@drawable/progress_green"
+                        android:max="100" android:progress="73"
+                        android:layout_marginBottom="6dp"/>
+                    <TextView android:id="@+id/tvMonthPct"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="73% of target reached" android:textSize="11sp"
+                        android:textColor="@color/earth_light"/>
+                    <TextView android:id="@+id/tvMonthTotal"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:textSize="11sp" android:textColor="@color/white_70"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+        <!-- HOW TO HELP -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="20dp">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="@string/how_help_title"
+                android:textSize="22sp" android:textStyle="bold"
+                android:textColor="@color/earth_dark" android:fontFamily="serif"
+                android:layout_marginBottom="4dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Choose how you want to make a difference."
+                android:textSize="13sp" android:textColor="@color/text_muted"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Donate Money Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardDonateMoney"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp" app:cardCornerRadius="14dp"
+                app:cardElevation="2dp" app:cardBackgroundColor="@color/surface"
+                android:foreground="?attr/selectableItemBackground">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="18dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="💰 Donate Money" android:textSize="16sp"
+                        android:textStyle="bold" android:textColor="@color/earth_dark"
+                        android:layout_marginBottom="6dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="@string/card_money_body" android:textSize="13sp"
+                        android:textColor="@color/text_muted" android:lineSpacingMultiplier="1.4"
+                        android:layout_marginBottom="12dp"/>
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_width="wrap_content" android:layout_height="42dp"
+                        android:text="@string/btn_donate_now" style="@style/Widget.DMD.Button"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Donate Food Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardDonateFood"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp" app:cardCornerRadius="14dp"
+                app:cardElevation="2dp" app:cardBackgroundColor="@color/surface"
+                android:foreground="?attr/selectableItemBackground">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="18dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="🥕 Donate Food" android:textSize="16sp"
+                        android:textStyle="bold" android:textColor="@color/earth_dark"
+                        android:layout_marginBottom="6dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="@string/card_food_body" android:textSize="13sp"
+                        android:textColor="@color/text_muted" android:lineSpacingMultiplier="1.4"
+                        android:layout_marginBottom="12dp"/>
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_width="wrap_content" android:layout_height="42dp"
+                        android:text="Donate Food" style="@style/Widget.DMD.Button.Green"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Volunteer Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardVolunteer"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp" app:cardCornerRadius="14dp"
+                app:cardElevation="2dp" app:cardBackgroundColor="@color/surface"
+                android:foreground="?attr/selectableItemBackground">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="18dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="🙋 Volunteer" android:textSize="16sp"
+                        android:textStyle="bold" android:textColor="@color/earth_dark"
+                        android:layout_marginBottom="6dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="@string/card_volunteer_body" android:textSize="13sp"
+                        android:textColor="@color/text_muted" android:lineSpacingMultiplier="1.4"
+                        android:layout_marginBottom="12dp"/>
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_width="wrap_content" android:layout_height="42dp"
+                        android:text="Get Involved" style="@style/Widget.DMD.Button.Outlined"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Footer info -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp"
+                android:background="@drawable/bg_card_green" android:layout_marginTop="8dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="DMD Food Bank" android:textSize="16sp" android:textStyle="bold"
+                    android:textColor="@color/white" android:layout_marginBottom="4dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/app_npo" android:textSize="11sp"
+                    android:textColor="@color/white_70"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

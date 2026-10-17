@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/cream">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="16dp">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Admin Dashboard" android:textSize="22sp"
+            android:textStyle="bold" android:textColor="@color/earth_dark"
+            android:fontFamily="serif" android:layout_marginBottom="4dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Overview of DMD Food Bank activity"
+            android:textSize="12sp" android:textColor="@color/text_muted"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Top stat cards -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="12dp">
+            <com.google.android.material.card.MaterialCardView android:layout_width="0dp"
+                android:layout_height="wrap_content" android:layout_weight="1"
+                android:layout_marginEnd="6dp" app:cardCornerRadius="12dp" app:cardElevation="2dp"
+                app:strokeColor="@color/earth_light" app:strokeWidth="2dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="14dp">
+                    <TextView android:id="@+id/tvTotalRaised" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="R 0.00"
+                        android:textSize="18sp" android:textStyle="bold"
+                        android:textColor="@color/earth" android:fontFamily="serif"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Total raised" android:textSize="10sp"
+                        android:textColor="@color/text_muted"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView android:layout_width="0dp"
+                android:layout_height="wrap_content" android:layout_weight="1"
+                android:layout_marginStart="6dp" app:cardCornerRadius="12dp" app:cardElevation="2dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="14dp">
+                    <TextView android:id="@+id/tvMonthRaised" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="R 0.00"
+                        android:textSize="18sp" android:textStyle="bold"
+                        android:textColor="@color/earth_dark" android:fontFamily="serif"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="This month" android:textSize="10sp"
+                        android:textColor="@color/text_muted"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="16dp">
+            <com.google.android.material.card.MaterialCardView android:layout_width="0dp"
+                android:layout_height="wrap_content" android:layout_weight="1"
+                android:layout_marginEnd="6dp" app:cardCornerRadius="12dp" app:cardElevation="2dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="14dp">
+                    <TextView android:id="@+id/tvTotalDonations" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="0"
+                        android:textSize="18sp" android:textStyle="bold" android:textColor="@color/earth_dark"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Total donations" android:textSize="10sp"
+                        android:textColor="@color/text_muted"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView android:layout_width="0dp"
+                android:layout_height="wrap_content" android:layout_weight="1"
+                android:layout_marginStart="6dp" app:cardCornerRadius="12dp" app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/status_bg_orange">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="14dp">
+                    <TextView android:id="@+id/tvUnreadMsgs" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="0"
+                        android:textSize="18sp" android:textStyle="bold"
+                        android:textColor="@color/status_orange"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="🔔 Unread msgs" android:textSize="10sp"
+                        android:textColor="@color/status_orange"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+        <!-- Top Donors -->
+        <com.google.android.material.card.MaterialCardView android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp" app:cardElevation="2dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="🏆 Top Donors" android:textSize="14sp"
+                    android:textStyle="bold" android:textColor="@color/earth_dark"
+                    android:layout_marginBottom="8dp"/>
+                <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvTopDonors"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Recent Donations -->
+        <com.google.android.material.card.MaterialCardView android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp" app:cardElevation="2dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="📋 Recent Donations" android:textSize="14sp"
+                    android:textStyle="bold" android:textColor="@color/earth_dark"
+                    android:layout_marginBottom="8dp"/>
+                <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvRecentDonations"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>

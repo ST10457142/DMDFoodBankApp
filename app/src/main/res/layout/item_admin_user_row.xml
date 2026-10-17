@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="vertical" android:padding="12dp"
+    android:background="?attr/selectableItemBackground">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center_vertical">
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical">
+            <TextView android:id="@+id/tvName" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textSize="13sp"
+                android:textStyle="bold" android:textColor="#1A1A1A"/>
+            <TextView android:id="@+id/tvEmail" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textSize="11sp" android:textColor="#6B6560"/>
+        </LinearLayout>
+        <TextView android:id="@+id/tvTotal" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textSize="13sp"
+            android:textStyle="bold" android:textColor="#2D6A4F"/>
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:layout_marginTop="6dp">
+        <TextView android:id="@+id/tvRole" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textSize="10sp"
+            android:background="@drawable/bg_badge_blue" android:textColor="#1E40AF"
+            android:paddingHorizontal="8dp" android:paddingVertical="2dp"
+            android:layout_marginEnd="6dp"/>
+        <TextView android:id="@+id/tvStatus" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textSize="10sp"
+            android:background="@drawable/bg_badge_green" android:textColor="#166534"
+            android:paddingHorizontal="8dp" android:paddingVertical="2dp"
+            android:layout_marginEnd="6dp"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnToggle" android:layout_width="wrap_content"
+            android:layout_height="30dp" android:textSize="10sp"
+            style="@style/Widget.DMD.Button.Danger" android:layout_marginEnd="6dp"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRole" android:layout_width="wrap_content"
+            android:layout_height="30dp" android:textSize="10sp"
+            style="@style/Widget.DMD.Button.Outlined"/>
+    </LinearLayout>
+</LinearLayout>

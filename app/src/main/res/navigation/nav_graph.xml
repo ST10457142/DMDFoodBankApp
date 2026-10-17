@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.dmd.foodbank.ui.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <action android:id="@+id/action_home_to_donate"
+            app:destination="@id/donateFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action android:id="@+id/action_home_to_about"
+            app:destination="@id/aboutFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+        <action android:id="@+id/action_home_to_dashboard"
+            app:destination="@id/dashboardFragment"/>
+        <action android:id="@+id/action_to_home"
+            app:destination="@id/homeFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/donateFragment"
+        android:name="com.dmd.foodbank.ui.donate.DonateFragment"
+        android:label="Donate"
+        tools:layout="@layout/fragment_donate">
+        <action android:id="@+id/action_donate_to_profile"
+            app:destination="@id/profileFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.dmd.foodbank.ui.dashboard.DashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_dashboard">
+        <action android:id="@+id/action_dashboard_to_donate"
+            app:destination="@id/donateFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+        <action android:id="@+id/action_dashboard_to_profile"
+            app:destination="@id/profileFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.dmd.foodbank.ui.profile.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile"/>
+
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.dmd.foodbank.ui.misc.AboutFragment"
+        android:label="About"
+        tools:layout="@layout/fragment_about"/>
+
+    <fragment
+        android:id="@+id/locationsFragment"
+        android:name="com.dmd.foodbank.ui.misc.LocationsFragment"
+        android:label="Locations"
+        tools:layout="@layout/fragment_locations"/>
+
+    <fragment
+        android:id="@+id/contactFragment"
+        android:name="com.dmd.foodbank.ui.misc.ContactFragment"
+        android:label="Contact"
+        tools:layout="@layout/fragment_contact"/>
+
+</navigation>

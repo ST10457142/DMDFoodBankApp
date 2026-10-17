@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/cream">
+
+    <!-- Toolbar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/earth_dark"
+        android:padding="8dp">
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_back"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:tint="@color/white"
+            android:contentDescription="@string/content_description_back"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/register_title"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+    <!-- Tabs -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/earth"
+        app:tabTextColor="@color/white_70"
+        app:tabSelectedTextColor="@color/white"
+        app:tabIndicatorColor="@color/warm"
+        app:tabIndicatorHeight="3dp"
+        app:tabMode="fixed"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- DONOR FIELDS -->
+            <LinearLayout
+                android:id="@+id/donorFields"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/full_name"
+                    style="@style/Widget.DMD.TextInputLayout"
+                    android:layout_marginBottom="12dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etFullName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"
+                        android:imeOptions="actionNext"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/email"
+                    style="@style/Widget.DMD.TextInputLayout"
+                    android:layout_marginBottom="12dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textEmailAddress"
+                        android:imeOptions="actionNext"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Donor Type" android:textSize="12sp" android:textColor="@color/text_hint"
+                    android:layout_marginBottom="4dp"/>
+                <Spinner android:id="@+id/spinnerDonorType"
+                    android:layout_width="match_parent" android:layout_height="52dp"
+                    android:background="@drawable/bg_spinner" android:padding="12dp"
+                    android:layout_marginBottom="12dp"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/password"
+                    app:endIconMode="password_toggle"
+                    style="@style/Widget.DMD.TextInputLayout"
+                    android:layout_marginBottom="12dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/confirm_password"
+                    app:endIconMode="password_toggle"
+                    style="@style/Widget.DMD.TextInputLayout"
+                    android:layout_marginBottom="12dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etConfirmPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <!-- VOLUNTEER FIELDS -->
+            <LinearLayout
+                android:id="@+id/volunteerFields"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="@string/full_name" style="@style/Widget.DMD.TextInputLayout"
+                    android:layout_marginBottom="12dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etVolName" android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:inputType="textPersonName"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="@string/email" style="@style/Widget.DMD.TextInputLayout"
+                    android:layout_marginBottom="12dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etVolEmail" android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:inputType="textEmailAddress"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/skills" android:textSize="12sp" android:textColor="@color/text_hint"
+                    android:layout_marginBottom="4dp"/>
+                <Spinner android:id="@+id/spinnerSkills"
+                    android:layout_width="match_parent" android:layout_height="52dp"
+                    android:background="@drawable/bg_spinner" android:padding="12dp"
+                    android:layout_marginBottom="12dp"/>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/availability" android:textSize="12sp" android:textColor="@color/text_hint"
+                    android:layout_marginBottom="4dp"/>
+                <Spinner android:id="@+id/spinnerAvailability"
+                    android:layout_width="match_parent" android:layout_height="52dp"
+                    android:background="@drawable/bg_spinner" android:padding="12dp"
+                    android:layout_marginBottom="12dp"/>
+            </LinearLayout>
+
+            <!-- BENEFICIARY FIELDS -->
+            <LinearLayout
+                android:id="@+id/beneficiaryFields"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="@string/full_name" style="@style/Widget.DMD.TextInputLayout"
+                    android:layout_marginBottom="12dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etBeneName" android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:inputType="textPersonName"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="@string/phone" style="@style/Widget.DMD.TextInputLayout"
+                    android:layout_marginBottom="12dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etBenePhone" android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:inputType="phone"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/household_size" android:textSize="12sp" android:textColor="@color/text_hint"
+                    android:layout_marginBottom="4dp"/>
+                <Spinner android:id="@+id/spinnerHousehold"
+                    android:layout_width="match_parent" android:layout_height="52dp"
+                    android:background="@drawable/bg_spinner" android:padding="12dp"
+                    android:layout_marginBottom="12dp"/>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/nearest_hub" android:textSize="12sp" android:textColor="@color/text_hint"
+                    android:layout_marginBottom="4dp"/>
+                <Spinner android:id="@+id/spinnerHub"
+                    android:layout_width="match_parent" android:layout_height="52dp"
+                    android:background="@drawable/bg_spinner" android:padding="12dp"
+                    android:layout_marginBottom="12dp"/>
+            </LinearLayout>
+
+            <ProgressBar android:id="@+id/progressBar"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_gravity="center" android:visibility="gone" android:layout_marginBottom="8dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRegister"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="@string/btn_create_account"
+                android:layout_marginTop="8dp"
+                style="@style/Widget.DMD.Button"/>
+
+            <TextView
+                android:id="@+id/tvSignIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/have_account"
+                android:textColor="@color/earth"
+                android:textSize="13sp"
+                android:padding="12dp"
+                android:layout_marginTop="8dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

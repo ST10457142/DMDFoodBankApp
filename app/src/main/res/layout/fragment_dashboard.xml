@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/cream">
+
+    <!-- Not logged in -->
+    <LinearLayout android:id="@+id/layoutNotLoggedIn"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:orientation="vertical" android:gravity="center" android:padding="32dp"
+        android:visibility="gone">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="📊" android:textSize="48sp" android:layout_marginBottom="16dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="@string/not_logged_in" android:textSize="18sp"
+            android:textStyle="bold" android:textColor="@color/earth_dark"
+            android:gravity="center" android:layout_marginBottom="8dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Create a free account to track your donations and impact."
+            android:textSize="13sp" android:textColor="@color/text_muted"
+            android:gravity="center" android:layout_marginBottom="24dp"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLoginPrompt" android:layout_width="wrap_content"
+            android:layout_height="48dp" android:text="@string/btn_sign_in"
+            style="@style/Widget.DMD.Button"/>
+    </LinearLayout>
+
+    <!-- Dashboard content -->
+    <ScrollView android:id="@+id/layoutDashboard"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:visibility="gone">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Header -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:background="@color/earth"
+                android:padding="20dp" android:paddingTop="28dp" android:paddingBottom="20dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:id="@+id/tvGreeting" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="Welcome back 👋"
+                            android:textSize="20sp" android:textColor="@color/white"
+                            android:textStyle="bold" android:fontFamily="serif"/>
+                        <TextView android:id="@+id/tvDate" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:textSize="11sp"
+                            android:textColor="@color/white_70" android:layout_marginTop="2dp"/>
+                    </LinearLayout>
+                    <!-- Avatar -->
+                    <TextView android:id="@+id/tvInitials" android:layout_width="48dp"
+                        android:layout_height="48dp" android:gravity="center"
+                        android:background="@drawable/bg_avatar" android:textSize="16sp"
+                        android:textColor="@color/earth_dark" android:textStyle="bold"/>
+                </LinearLayout>
+                <TextView android:id="@+id/tvTotalDonated" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="R 0.00"
+                    android:textSize="28sp" android:textColor="@color/earth_light"
+                    android:textStyle="bold" android:fontFamily="serif" android:layout_marginTop="16dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Total donated" android:textSize="11sp" android:textColor="@color/white_70"/>
+            </LinearLayout>
+
+            <!-- Stat Cards -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:padding="16dp" android:paddingBottom="0dp">
+                <com.google.android.material.card.MaterialCardView android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:layout_weight="1"
+                    android:layout_marginEnd="6dp" app:cardCornerRadius="12dp" app:cardElevation="2dp"
+                    app:strokeColor="@color/earth_light" app:strokeWidth="1dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:padding="14dp">
+                        <TextView android:id="@+id/tvMyTotal" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="R 0.00"
+                            android:textSize="18sp" android:textStyle="bold" android:textColor="@color/earth"
+                            android:fontFamily="serif"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="@string/total_donated" android:textSize="10sp"
+                            android:textColor="@color/text_muted"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:layout_weight="1"
+                    android:layout_marginHorizontal="3dp" app:cardCornerRadius="12dp" app:cardElevation="2dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:padding="14dp">
+                        <TextView android:id="@+id/tvMyCount" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="0"
+                            android:textSize="18sp" android:textStyle="bold" android:textColor="@color/earth_dark"
+                            android:fontFamily="serif"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="@string/donations_made" android:textSize="10sp"
+                            android:textColor="@color/text_muted"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:layout_weight="1"
+                    android:layout_marginStart="6dp" app:cardCornerRadius="12dp" app:cardElevation="2dp"
+                    app:cardBackgroundColor="@color/earth_light">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:padding="14dp">
+                        <TextView android:id="@+id/tvMealsEst" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="0"
+                            android:textSize="18sp" android:textStyle="bold" android:textColor="@color/earth_dark"
+                            android:fontFamily="serif"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="@string/meals_funded" android:textSize="10sp"
+                            android:textColor="@color/earth_dark"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <!-- Monthly Goal -->
+            <com.google.android.material.card.MaterialCardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_margin="16dp"
+                app:cardCornerRadius="12dp" app:cardElevation="2dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="16dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="🎯 Monthly Campaign Goal"
+                            android:textSize="13sp" android:textStyle="bold" android:textColor="@color/earth_dark"/>
+                        <TextView android:id="@+id/tvMonthTotal" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:textSize="12sp"
+                            android:textStyle="bold" android:textColor="@color/earth"/>
+                    </LinearLayout>
+                    <ProgressBar android:id="@+id/progressMonth"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="match_parent" android:layout_height="10dp"
+                        android:progressDrawable="@drawable/progress_green"
+                        android:layout_marginVertical="8dp" android:max="100"/>
+                    <TextView android:id="@+id/tvMonthPct" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:textSize="11sp"
+                        android:textColor="@color/text_muted"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Milestone -->
+            <com.google.android.material.card.MaterialCardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="16dp" app:cardCornerRadius="12dp"
+                app:cardBackgroundColor="@color/earth" app:cardElevation="2dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="16dp">
+                    <TextView android:id="@+id/tvMilestone" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="🏆 Next milestone"
+                        android:textSize="14sp" android:textStyle="bold" android:textColor="@color/white"/>
+                    <TextView android:id="@+id/tvMilestoneRemaining" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:textSize="12sp"
+                        android:textColor="@color/white_70" android:layout_marginTop="4dp"/>
+                    <ProgressBar android:id="@+id/progressMilestone"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="match_parent" android:layout_height="8dp"
+                        android:progressDrawable="@drawable/progress_white"
+                        android:layout_marginTop="10dp" android:max="100"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Recent Donations -->
+            <com.google.android.material.card.MaterialCardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="16dp" app:cardCornerRadius="12dp" app:cardElevation="2dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="16dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="📋 Recent Donations" android:textSize="14sp"
+                        android:textStyle="bold" android:textColor="@color/earth_dark"
+                        android:layout_marginBottom="12dp"/>
+                    <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvRecentDonations"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"/>
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnDonate" android:layout_width="match_parent"
+                        android:layout_height="48dp" android:text="@string/btn_make_donation"
+                        android:layout_marginTop="12dp" style="@style/Widget.DMD.Button"/>
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnProfile" android:layout_width="match_parent"
+                        android:layout_height="48dp" android:text="View Full Profile"
+                        android:layout_marginTop="8dp" style="@style/Widget.DMD.Button.Outlined"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

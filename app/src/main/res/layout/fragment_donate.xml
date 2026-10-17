@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/cream">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:background="@color/earth_dark"
+        android:padding="20dp" android:paddingTop="24dp" android:paddingBottom="16dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="@string/donate_title" android:textSize="22sp"
+            android:textColor="@color/white" android:textStyle="bold" android:fontFamily="serif"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="@string/donate_sub" android:textSize="12sp"
+            android:textColor="@color/white_70" android:layout_marginTop="4dp"/>
+    </LinearLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:background="@color/earth"
+        app:tabTextColor="@color/white_70" app:tabSelectedTextColor="@color/white"
+        app:tabIndicatorColor="@color/warm" app:tabIndicatorHeight="3dp"/>
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:fillViewport="true">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="20dp">
+
+            <!-- MONEY FIELDS -->
+            <LinearLayout android:id="@+id/moneyFields"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/choose_amount" android:textSize="14sp"
+                    android:textStyle="bold" android:textColor="@color/earth_dark"
+                    android:layout_marginBottom="10dp"/>
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroupAmount" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" app:singleSelection="true"
+                    android:layout_marginBottom="12dp"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilCustomAmount" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:hint="@string/custom_amount"
+                    style="@style/Widget.DMD.TextInputLayout"
+                    android:visibility="gone" android:layout_marginBottom="12dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etCustomAmount" android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:inputType="numberDecimal"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/frequency" android:textSize="12sp"
+                    android:textColor="@color/text_hint" android:layout_marginBottom="4dp"/>
+                <Spinner android:id="@+id/spinnerFrequency"
+                    android:layout_width="match_parent" android:layout_height="52dp"
+                    android:background="@drawable/bg_spinner"
+                    android:layout_marginBottom="12dp"/>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardUserStats" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:layout_marginBottom="12dp"
+                    app:cardCornerRadius="12dp" app:cardBackgroundColor="@color/status_bg_green"
+                    android:visibility="gone">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:padding="14dp">
+                        <TextView android:id="@+id/tvUserTotal" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:textSize="16sp"
+                            android:textStyle="bold" android:textColor="@color/earth"/>
+                        <TextView android:id="@+id/tvUserCount" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:textSize="12sp"
+                            android:textColor="@color/text_muted"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <!-- FOOD FIELDS -->
+            <LinearLayout android:id="@+id/foodFields"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:visibility="gone">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="@string/food_description" style="@style/Widget.DMD.TextInputLayout"
+                    android:layout_marginBottom="12dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etFoodDescription" android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:inputType="textMultiLine"
+                        android:minLines="3" android:hint="@string/food_description_hint"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/drop_hub" android:textSize="12sp"
+                    android:textColor="@color/text_hint" android:layout_marginBottom="4dp"/>
+                <Spinner android:id="@+id/spinnerFoodHub"
+                    android:layout_width="match_parent" android:layout_height="52dp"
+                    android:background="@drawable/bg_spinner" android:layout_marginBottom="12dp"/>
+            </LinearLayout>
+
+            <ProgressBar android:id="@+id/progressBar"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_gravity="center" android:visibility="gone" android:layout_marginBottom="8dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDonate" android:layout_width="match_parent"
+                android:layout_height="52dp" android:text="@string/btn_donate_secure"
+                style="@style/Widget.DMD.Button"/>
+
+            <!-- Trust badges -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center"
+                android:layout_marginTop="12dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="🔒 SSL" android:textSize="10sp" android:textColor="@color/earth"
+                    android:background="@drawable/bg_badge_green" android:paddingHorizontal="8dp"
+                    android:paddingVertical="3dp" android:layout_marginEnd="6dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="📄 S18A" android:textSize="10sp" android:textColor="@color/earth"
+                    android:background="@drawable/bg_badge_green" android:paddingHorizontal="8dp"
+                    android:paddingVertical="3dp" android:layout_marginEnd="6dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="✅ NPO" android:textSize="10sp" android:textColor="@color/earth"
+                    android:background="@drawable/bg_badge_green" android:paddingHorizontal="8dp"
+                    android:paddingVertical="3dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

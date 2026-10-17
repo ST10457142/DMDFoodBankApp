@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand -->
+    <color name="earth_dark">#1A3A2F</color>
+    <color name="earth">#2D6A4F</color>
+    <color name="earth_light">#52B788</color>
+    <color name="warm">#F4A261</color>
+    <color name="warm_dark">#E76F51</color>
+    <color name="cream">#FAF7F0</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="surface2">#F0EDE4</color>
+    <color name="border">#D6CFC0</color>
+    <color name="text_primary">#1A1A1A</color>
+    <color name="text_muted">#4A4540</color>
+    <color name="text_hint">#6B6560</color>
+    <color name="error">#B91C1C</color>
+    <color name="success_dark">#166534</color>
+
+    <!-- Material theme mappings -->
+    <color name="colorPrimary">#2D6A4F</color>
+    <color name="colorPrimaryDark">#1A3A2F</color>
+    <color name="colorPrimaryVariant">#1A3A2F</color>
+    <color name="colorSecondary">#F4A261</color>
+    <color name="colorSecondaryVariant">#E76F51</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorOnSecondary">#1A3A2F</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="colorOnSurface">#1A1A1A</color>
+    <color name="colorBackground">#FAF7F0</color>
+    <color name="colorError">#B91C1C</color>
+    <color name="colorOnError">#FFFFFF</color>
+
+    <!-- Chip states -->
+    <color name="chip_checked">#2D6A4F</color>
+    <color name="chip_unchecked">#F0EDE4</color>
+    <color name="chip_text_checked">#FFFFFF</color>
+    <color name="chip_text_unchecked">#4A4540</color>
+
+    <!-- Status -->
+    <color name="status_green">#166534</color>
+    <color name="status_orange">#92400E</color>
+    <color name="status_red">#B91C1C</color>
+    <color name="status_blue">#1E40AF</color>
+    <color name="status_bg_green">#D1FAE5</color>
+    <color name="status_bg_orange">#FEF3C7</color>
+    <color name="status_bg_red">#FEE2E2</color>
+    <color name="status_bg_blue">#DBEAFE</color>
+
+    <!-- Nav -->
+    <color name="nav_active">#2D6A4F</color>
+    <color name="nav_inactive">#9E9E9E</color>
+
+    <!-- White variants -->
+    <color name="white">#FFFFFF</color>
+    <color name="white_70">#B3FFFFFF</color>
+    <color name="white_40">#66FFFFFF</color>
+
+    <!-- Dark for admin header -->
+    <color name="admin_header">#1A3A2F</color>
+</resources>

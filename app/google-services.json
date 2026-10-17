@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "700339931216",
+    "project_id": "dmdfoodbank",
+    "storage_bucket": "dmdfoodbank.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:700339931216:android:8ddb0e432d828480e82955",
+        "android_client_info": {
+          "package_name": "com.dmd.foodbank"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRtmzpYyKSWbL-_F-kIUW5DHDzkKrfnZs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
