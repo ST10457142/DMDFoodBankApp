@@ -1,3 +1,4 @@
+![Android CI](https://github.com/ST10457142/DMDFoodBankApp/actions/workflows/android.yml/badge.svg)
 DMD Food Bank App
 A food management mobile application that stores and manages all donation information in
 one central location, making donors, donations, beneficiaries, management, and reporting
