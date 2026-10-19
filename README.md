@@ -33,7 +33,7 @@ How to Run :
 4. Run on a real Android device (not emulator)
    
 Links :
-- Demo Video: Lihk will be added here soon 
+- Demo Video: https://youtube.com/shorts/aGZP98Xcnsk?si=XOcFGbX7BTTtLuAh 
   
 Automated Testing :
 This project uses GitHub Actions to automatically run tests and build the app on every push.
